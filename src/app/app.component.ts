@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   fetchStoodents(): Student[] {
     let stoodents: Student[] = [];
 
-    stoodents.push(new Student('Eedu', '1st grade'));
+    stoodents.push(new Student('Eedu', '6st grade'));
 
     return stoodents;
   }
