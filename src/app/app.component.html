@@ -110,7 +110,6 @@
   </div>
 
   <!--Table of students-->
-  <div>
     <table *ngIf="students.length">
       <tr>
         <th>Firstname</th>
@@ -121,7 +120,21 @@
         <td>{{item.grade}}</td>
       </tr>
     </table>
-  </div>
+
+  <!--Table of teachers-->
+    <table *ngIf="teachers.length">
+      <tr>
+        <th>Firstname</th>
+        <th>Subject</th>
+      </tr>
+      <tr *ngFor="let item of teachers">
+        <td>{{item.name}}</td>
+        <td>{{item.subject}}</td>
+      </tr>
+    </table>
+
+
+
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
