@@ -14,9 +14,6 @@ export class AppComponent implements OnInit{
   }
   title = 'Student-teacher task';
 
-  studentsTitle = 'List of students';
-  teacherTitle = 'List of teachers';
-
   students: Student[] = [];
 
   fetchStudents(): Student[] {
