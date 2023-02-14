@@ -1,15 +1,4 @@
-<div id="studentList" *ngIf="students.length > 0">
-  <table style="background: -moz-mac-accentlightshadow">
-    <tr>
-      <th>First Name</th>
-      <th>Grade</th>
-    </tr>
-    <tr *ngFor="let student of students">
-      <td>{{ student.name }}</td>
-      <td>{{ student.grade }}</td>
-    </tr>
-  </table>
-</div>
+
 
 <div id="studentFormDiv" >
   <h3>Add a new student</h3>
@@ -23,4 +12,18 @@
     <br/>
     <button type="submit">Add student</button>
   </form>
+</div>
+
+
+<div id="studentList" *ngIf="students.length > 0">
+  <table style="background: -moz-mac-accentlightshadow">
+    <tr>
+      <th>First Name</th>
+      <th>Grade</th>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.grade }}</td>
+    </tr>
+  </table>
 </div>
