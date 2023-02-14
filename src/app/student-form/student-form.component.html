@@ -1,0 +1,26 @@
+<div id="studentList" *ngIf="students.length > 0">
+  <table style="background: -moz-mac-accentlightshadow">
+    <tr>
+      <th>First Name</th>
+      <th>Grade</th>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.grade }}</td>
+    </tr>
+  </table>
+</div>
+
+<div id="studentFormDiv" >
+  <h3>Add a new student</h3>
+  <form id="studentForm" #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)" >
+    <label for="name">Student's firstname:</label>
+    <input type="text" name="name" id="name" [(ngModel)]="Name"/>
+    <br/>
+
+    <label for="grade">Grade:</label>
+    <input type="number" name="grade" id="grade" [(ngModel)]="Grade"/>
+    <br/>
+    <button type="submit">Add student</button>
+  </form>
+</div>

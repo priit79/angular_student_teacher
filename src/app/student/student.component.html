@@ -1,0 +1,14 @@
+<h2>{{ studentTitle }}</h2>
+<table style="background: -moz-mac-accentlightshadow">
+  <button class="card card-small" (click)="addStudent()" style="color: white; background: black">Add student
+  </button>
+  <tr>
+    <th>First Name</th>
+    <th>Grade</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{ student.name }}</td>
+
+    <td>{{ student.grade }}</td>
+  </tr>
+</table>

@@ -1,49 +1,48 @@
 import {Component, OnInit} from '@angular/core';
-import {Student} from "./school/shared/models/Student";
-import {Teacher} from "./school/shared/models/Teacher";
-
-
+import {Student} from "./shared/models/Student";
+import {Teacher} from "./shared/models/Teacher";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit{
   ngOnInit(): void {
-    this.students = this.fetchStoodents();
-    this.teachers = this.fetchTeaachers();
+    this.students = this.fetchStudents();
+    this.teachers = this.fetchTeachers();
   }
-  title = 'angular-student-teacher-exercise';
+  title = 'Student-teacher task';
+
+  studentsTitle = 'List of students';
+  teacherTitle = 'List of teachers';
 
   students: Student[] = [];
-  studentNames: string[] = ['Imbi', 'Liisu', 'August'];
+
+  fetchStudents(): Student[] {
+    let students: Student[] = [];
+
+    students.push(new Student('Peters',  5));
+    students.push(new Student('Anya',  4));
+    students.push(new Student('Joel',  5));
+    students.push(new Student('Liza',  4));
+
+
+    return students;
+  }
 
   teachers: Teacher[] = [];
-  teacherNames: string[] = ['Vinod', 'Uche', 'Laur'];
 
+  fetchTeachers(): Teacher[] {
+    let teachers: Teacher[] = [];
 
-  fetchStoodents(): Student[] {
-    let stoodents: Student[] = [];
-    stoodents.push(new Student('Eedu', '6st grade'));
-    return stoodents;
+    teachers.push(new Teacher('Trey', 'Science'));
+    teachers.push(new Teacher('Bree', 'Mathematics'));
+    teachers.push(new Teacher('Samantha',  'Python'));
+    teachers.push(new Teacher('Bree',  'Java'));
+
+    return teachers;
   }
 
-  fetchTeaachers(): Teacher[] {
-    let teaachers: Teacher[] = [];
-    teaachers.push(new Teacher('Udupets', 'mathematics'))
-    return teaachers;
-  }
 
-  addStudent() {
-    let studentName = this.studentNames.at(Math.floor(Math.random() * this.studentNames.length));
-    // @ts-ignore
-    this.students.push(new Student(studentName, '10th grade'))
-  }
-
-  addTeacher() {
-    let teacherName = this.teacherNames.at(Math.floor(Math.random() * this.teacherNames.length));
-    // @ts-ignore
-    this.teachers.push(new Teacher(teacherName, 'programming'))
-  }
 }
