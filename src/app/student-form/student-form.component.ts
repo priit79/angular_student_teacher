@@ -17,12 +17,11 @@ export class StudentFormComponent {
   Grade: number = 0;
 
 
-
-
   addStudent(studentForm: NgForm) {
+    if(this.Name.length > 0 && this.Grade > 0) {
     this.students.push(new Student(this.Name, this.Grade));
     studentForm.reset();
+   }
   }
 }
-
 
