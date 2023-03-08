@@ -1,4 +1,4 @@
-export class Student {
+export class CreateSchool {
   name: string;
   grade: number;
 
